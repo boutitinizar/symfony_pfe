@@ -1,3 +1,9 @@
 pfe_front_homepage:
     path:     /hello
     defaults: { _controller: pfeFrontBundle:Default:index }
+pfe_front_sheet:
+    path:     /sheet/{id}
+    defaults: { _controller: pfeFrontBundle:Sheet:sheet}
+pfe_front_sheet-list:
+    path:     /sheet-list
+    defaults: { _controller: pfeFrontBundle:Sheet:sheetList}
