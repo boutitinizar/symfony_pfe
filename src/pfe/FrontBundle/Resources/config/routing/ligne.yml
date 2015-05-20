@@ -1,0 +1,30 @@
+ligne:
+    path:     /
+    defaults: { _controller: "pfeFrontBundle:Ligne:index" }
+
+ligne_show:
+    path:     /{id}/show
+    defaults: { _controller: "pfeFrontBundle:Ligne:show" }
+
+ligne_new:
+    path:     /new
+    defaults: { _controller: "pfeFrontBundle:Ligne:new" }
+
+ligne_create:
+    path:     /create
+    defaults: { _controller: "pfeFrontBundle:Ligne:create" }
+    methods:  POST
+
+ligne_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "pfeFrontBundle:Ligne:edit" }
+
+ligne_update:
+    path:     /{id}/update
+    defaults: { _controller: "pfeFrontBundle:Ligne:update" }
+    methods:  [POST, PUT]
+
+ligne_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "pfeFrontBundle:Ligne:delete" }
+    methods:  [POST, DELETE]

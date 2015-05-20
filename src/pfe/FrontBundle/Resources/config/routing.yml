@@ -1,3 +1,7 @@
+pfe_front_ligne:
+    resource: "@pfeFrontBundle/Resources/config/routing/ligne.yml"
+    prefix:   /ligne
+
 pfe_front_homepage:
     path:     /hello
     defaults: { _controller: pfeFrontBundle:Default:index }

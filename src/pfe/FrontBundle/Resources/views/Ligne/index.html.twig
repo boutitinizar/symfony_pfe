@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Ligne list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomligne</th>
+                <th>Zone</th>
+                <th>Poste</th>
+                <th>Superviseur</th>
+                <th>Teamleader</th>
+                <th>Objectifligne</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('ligne_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nomLigne }}</td>
+                <td>{{ entity.zone }}</td>
+                <td>{{ entity.poste }}</td>
+                <td>{{ entity.superviseur }}</td>
+                <td>{{ entity.teamleader }}</td>
+                <td>{{ entity.objectifligne }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('ligne_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('ligne_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('ligne_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
