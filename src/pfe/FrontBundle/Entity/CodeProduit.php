@@ -152,4 +152,9 @@ class CodeProduit
     {
         return $this->CodeProduit;
     }
+
+    public function __toString()
+    {
+         return $this->name;
+    }
 }
