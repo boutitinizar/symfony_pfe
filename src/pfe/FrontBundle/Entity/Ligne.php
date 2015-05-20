@@ -63,7 +63,11 @@ class Ligne
      */
     private $objectifligne;
 
-
+    /**
+     * @ORM\ManyToMany(targetEntity="CodeProduit", inversedBy="Ligne")
+     * @ORM\JoinTable(name="Ligne_CodeProduit")
+     */
+    private $CodeProduit;
 
     /**
      * Get id
@@ -211,5 +215,45 @@ class Ligne
     public function getObjectifligne()
     {
         return $this->objectifligne;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->CodeProduit = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add CodeProduit
+     *
+     * @param \pfe\FrontBundle\Entity\CodeProduit $codeProduit
+     * @return Ligne
+     */
+    public function addCodeProduit(\pfe\FrontBundle\Entity\CodeProduit $codeProduit)
+    {
+        $this->CodeProduit[] = $codeProduit;
+
+        return $this;
+    }
+
+    /**
+     * Remove CodeProduit
+     *
+     * @param \pfe\FrontBundle\Entity\CodeProduit $codeProduit
+     */
+    public function removeCodeProduit(\pfe\FrontBundle\Entity\CodeProduit $codeProduit)
+    {
+        $this->CodeProduit->removeElement($codeProduit);
+    }
+
+    /**
+     * Get CodeProduit
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCodeProduit()
+    {
+        return $this->CodeProduit;
     }
 }

@@ -37,6 +37,11 @@ class CodeProduit
      */
     private $description;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Ligne", mappedBy="CodeProduit")
+     */
+    private $CodeProduit;
+
 
 
     /**
@@ -106,5 +111,45 @@ class CodeProduit
     public function getDescription()
     {
         return $this->description;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->CodeProduit = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add CodeProduit
+     *
+     * @param \pfe\FrontBundle\Entity\Ligne $codeProduit
+     * @return CodeProduit
+     */
+    public function addCodeProduit(\pfe\FrontBundle\Entity\Ligne $codeProduit)
+    {
+        $this->CodeProduit[] = $codeProduit;
+
+        return $this;
+    }
+
+    /**
+     * Remove CodeProduit
+     *
+     * @param \pfe\FrontBundle\Entity\Ligne $codeProduit
+     */
+    public function removeCodeProduit(\pfe\FrontBundle\Entity\Ligne $codeProduit)
+    {
+        $this->CodeProduit->removeElement($codeProduit);
+    }
+
+    /**
+     * Get CodeProduit
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCodeProduit()
+    {
+        return $this->CodeProduit;
     }
 }
