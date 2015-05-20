@@ -1,0 +1,4 @@
+pfe_front:
+    resource: "@pfeFrontBundle/Resources/config/routing.yml"
+    prefix:   /front
+
