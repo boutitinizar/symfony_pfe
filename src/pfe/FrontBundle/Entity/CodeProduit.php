@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * CodeProduit
  *
- * @ORM\Table(name="code_produit", uniqueConstraints={@ORM\UniqueConstraint(name="NAME_UNIQUE", columns={"NAME"}), @ORM\UniqueConstraint(name="ID_UNIQUE", columns={"ID"})})
+ * @ORM\Table(name="code_produit")
  * @ORM\Entity
  */
 class CodeProduit
@@ -15,9 +15,9 @@ class CodeProduit
     /**
      * @var integer
      *
-     * @ORM\Column(name="ID", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
@@ -25,7 +25,6 @@ class CodeProduit
      * @var string
      *
      * @ORM\Column(name="NAME", type="string", length=45, nullable=false)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
     private $name;
@@ -33,7 +32,7 @@ class CodeProduit
     /**
      * @var string
      *
-     * @ORM\Column(name="DESCRIPTION", type="string", length=45, nullable=true)
+     * @ORM\Column(name="DESCRIPTION", type="string", length=45, nullable=false)
      */
     private $description;
 
@@ -153,10 +152,7 @@ class CodeProduit
         return $this->CodeProduit;
     }
 
-    public function __toString()
-    {
-         return $this->name;
-    }
+
 
     /**
      * Add Ligne
@@ -189,5 +185,9 @@ class CodeProduit
     public function getLigne()
     {
         return $this->Ligne;
+    }
+
+    public function  __toString(){
+        return $this->name;
     }
 }

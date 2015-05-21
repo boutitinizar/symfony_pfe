@@ -1,0 +1,30 @@
+produit:
+    path:     /
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:index" }
+
+produit_show:
+    path:     /{id}/show
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:show" }
+
+produit_new:
+    path:     /new
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:new" }
+
+produit_create:
+    path:     /create
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:create" }
+    methods:  POST
+
+produit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:edit" }
+
+produit_update:
+    path:     /{id}/update
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:update" }
+    methods:  [POST, PUT]
+
+produit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "pfeFrontBundle:CodeProduit:delete" }
+    methods:  [POST, DELETE]

@@ -256,4 +256,7 @@ class Ligne
     {
         return $this->CodeProduit;
     }
+    public function  __toString(){
+        return $this->getNomLigne();
+    }
 }
