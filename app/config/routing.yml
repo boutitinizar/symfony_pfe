@@ -1,4 +1,5 @@
 pfe_front:
     resource: "@pfeFrontBundle/Resources/config/routing.yml"
     prefix:   /front
-
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

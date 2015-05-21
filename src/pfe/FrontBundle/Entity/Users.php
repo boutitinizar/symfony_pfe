@@ -1,7 +1,7 @@
 <?php
 
 namespace pfe\FrontBundle\Entity;
-
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="id", columns={"id"})})
  * @ORM\Entity
  */
-class Users
+class Users extends BaseUser
 {
     /**
      * @var integer
@@ -19,21 +19,7 @@ class Users
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=255, nullable=false)
-     */
-    private $login;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="text", nullable=false)
-     */
-    private $password;
+    protected $id;
 
     /**
      * @var string
@@ -63,7 +49,11 @@ class Users
      */
     private $post;
 
-
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * Get id
