@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>TestResult list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateheure</th>
+                <th>Codeproduct</th>
+                <th>Serialnumber</th>
+                <th>Movement</th>
+                <th>Status</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('archive_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.dateHeure %}{{ entity.dateHeure|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.codeProduct }}</td>
+                <td>{{ entity.serialNumber }}</td>
+                <td>{{ entity.movement }}</td>
+                <td>{{ entity.status }}</td>
+                <td>{{ entity.default }}</td>
+                <td>{{ entity.description }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('archive_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('archive_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('archive_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

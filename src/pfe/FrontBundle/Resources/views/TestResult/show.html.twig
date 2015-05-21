@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>TestResult</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Dateheure</th>
+                <td>{{ entity.dateHeure|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Codeproduct</th>
+                <td>{{ entity.codeProduct }}</td>
+            </tr>
+            <tr>
+                <th>Serialnumber</th>
+                <td>{{ entity.serialNumber }}</td>
+            </tr>
+            <tr>
+                <th>Movement</th>
+                <td>{{ entity.movement }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>Default</th>
+                <td>{{ entity.default }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('archive') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('archive_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

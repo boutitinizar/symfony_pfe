@@ -1,0 +1,30 @@
+archive:
+    path:     /
+    defaults: { _controller: "pfeFrontBundle:TestResult:index" }
+
+archive_show:
+    path:     /{id}/show
+    defaults: { _controller: "pfeFrontBundle:TestResult:show" }
+
+archive_new:
+    path:     /new
+    defaults: { _controller: "pfeFrontBundle:TestResult:new" }
+
+archive_create:
+    path:     /create
+    defaults: { _controller: "pfeFrontBundle:TestResult:create" }
+    methods:  POST
+
+archive_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "pfeFrontBundle:TestResult:edit" }
+
+archive_update:
+    path:     /{id}/update
+    defaults: { _controller: "pfeFrontBundle:TestResult:update" }
+    methods:  [POST, PUT]
+
+archive_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "pfeFrontBundle:TestResult:delete" }
+    methods:  [POST, DELETE]
