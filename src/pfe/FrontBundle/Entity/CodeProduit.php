@@ -40,7 +40,7 @@ class CodeProduit
     /**
      * @ORM\ManyToMany(targetEntity="Ligne", mappedBy="CodeProduit")
      */
-    private $CodeProduit;
+    private $Ligne;
 
 
 
@@ -156,5 +156,38 @@ class CodeProduit
     public function __toString()
     {
          return $this->name;
+    }
+
+    /**
+     * Add Ligne
+     *
+     * @param \pfe\FrontBundle\Entity\Ligne $ligne
+     * @return CodeProduit
+     */
+    public function addLigne(\pfe\FrontBundle\Entity\Ligne $ligne)
+    {
+        $this->Ligne[] = $ligne;
+
+        return $this;
+    }
+
+    /**
+     * Remove Ligne
+     *
+     * @param \pfe\FrontBundle\Entity\Ligne $ligne
+     */
+    public function removeLigne(\pfe\FrontBundle\Entity\Ligne $ligne)
+    {
+        $this->Ligne->removeElement($ligne);
+    }
+
+    /**
+     * Get Ligne
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLigne()
+    {
+        return $this->Ligne;
     }
 }
