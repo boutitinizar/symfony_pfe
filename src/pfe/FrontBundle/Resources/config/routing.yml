@@ -11,7 +11,7 @@ pfe_front_ligne:
     prefix:   /ligne
 
 pfe_front_homepage:
-    path:     /hello
+    path:     /dashboard
     defaults: { _controller: pfeFrontBundle:Default:index }
 pfe_front_sheet:
     path:     /sheet/{id}

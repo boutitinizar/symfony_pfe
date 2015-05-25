@@ -1,11 +1,18 @@
-{% extends '::base.html.twig' %}
-
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block titleh1 %} Ligne list{% endblock %}
+{% block breadcrumb %}
+    {{ parent() }}
+  <li>
+      <a href="#">Ligne list</a>
+  </li>
+{% endblock %}
 {% block body -%}
-    <h1>Ligne list</h1>
+<div class="portlet light">
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="sample_1">
 
-    <table class="records_list">
         <thead>
-            <tr>
+        <tr role="row" class="heading">
                 <th>Id</th>
                 <th>Nomligne</th>
                 <th>Zone</th>
@@ -40,12 +47,14 @@
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
+        </div>
+    <ul>
         <li>
             <a href="{{ path('ligne_new') }}">
                 Create a new entry
             </a>
         </li>
     </ul>
-    {% endblock %}
+</div>
+
+{% endblock %}

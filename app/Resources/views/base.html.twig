@@ -3,12 +3,54 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-       <h1>{% block titlepage %}{% endblock %} </h1>
-        {% block body %}{% endblock %}
+    <body class="page-md page-header-fixed page-sidebar-closed-hide-logo">
+
+    {% include 'pfeFrontBundle:Includes:header.html.twig' %}
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        {% include 'pfeFrontBundle:Includes:sidebar.html.twig' %}
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <!-- BEGIN PAGE HEADER-->
+                <!-- BEGIN PAGE HEAD -->
+                <div class="page-head">
+                    <!-- BEGIN PAGE TITLE -->
+                    <div class="page-title">
+                        <h1> {% block titleh1 %}
+                        {% endblock %}</h1>
+                    </div>
+                    <!-- END PAGE TITLE -->
+                </div>
+                <!-- END PAGE HEAD -->
+                <!-- BEGIN PAGE BREADCRUMB -->
+                <ul class="page-breadcrumb breadcrumb">
+                    {% block breadcrumb %}
+                        <li>
+                            <a href="index.html">Home</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                    {% endblock %}
+                </ul>
+                <!-- END PAGE BREADCRUMB -->
+                <!-- END PAGE HEADER-->
+                <!-- BEGIN PAGE CONTENT-->
+                <div class="row">
+                    <div class="col-md-12">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT-->
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    {% include 'pfeFrontBundle:Includes:footer.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
