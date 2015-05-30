@@ -19,14 +19,22 @@ class TestResultController extends Controller
      * Lists all TestResult entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('pfeFrontBundle:TestResult')->findAll();
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT a FROM pfeFrontBundle:TestResult a";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
 
         return $this->render('pfeFrontBundle:TestResult:index.html.twig', array(
-            'entities' => $entities,
+            'pagination' => $pagination
         ));
     }
     /**

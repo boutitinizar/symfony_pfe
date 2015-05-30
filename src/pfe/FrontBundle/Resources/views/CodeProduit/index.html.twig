@@ -1,9 +1,15 @@
 {% extends 'pfeFrontBundle:Default:index.html.twig' %}
-
+{% block titleh1 %}Code Produit list{% endblock %}
+{% block breadcrumb %}
+    {{ parent() }}
+    <li>
+        <a href="#">Code Produit list</a>
+    </li>
+{% endblock %}
 {% block body -%}
-    <h1>CodeProduit list</h1>
-
-    <table class="records_list">
+<div class="portlet light">
+    <div class="portlet-body">
+    <table class="table table-striped table-bordered table-hover" id="sample_1">
         <thead>
             <tr>
                 <th>Id</th>
@@ -32,12 +38,11 @@
         {% endfor %}
         </tbody>
     </table>
+</div></div>
 
-        <ul>
-        <li>
-            <a href="{{ path('produit_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+            <a href="{{ path('produit_new') }}" class="btn btn-circle btn-default btn-sm">
+                <i class="fa fa-plus"></i> Ajouter Ligne </a>
+
+
+
     {% endblock %}

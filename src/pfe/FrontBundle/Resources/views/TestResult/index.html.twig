@@ -1,53 +1,38 @@
 {% extends 'pfeFrontBundle:Default:index.html.twig' %}
 
 {% block body -%}
-    <h1>TestResult list</h1>
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+    <table class="table table-striped table-bordered table-hover" id="sample_1">
+        <tr>
+            {# sorting of properties based on query components #}
+            <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
+            <th{% if pagination.isSorted('a.dateHeure') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'dateHeure', 'a.dateHeure') }}</th>
+            <th{% if pagination.isSorted('a.codeProduc't) %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'codeProduct', 'a.codeProduct') }}</th>
+            <th{% if pagination.isSorted('a.serialNumber') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'serialNumber', 'a.serialNumber') }}</th>
+            <th{% if pagination.isSorted('a.movement') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'movement', 'a.movement') }}</th>
+            <th{% if pagination.isSorted('a.status') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'status', 'a.status') }}</th>
+            <th{% if pagination.isSorted('a.default') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'default', 'a.default') }}</th>
+            <th{% if pagination.isSorted('a.description') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'description', 'a.description') }}</th>
+        </tr>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Dateheure</th>
-                <th>Codeproduct</th>
-                <th>Serialnumber</th>
-                <th>Movement</th>
-                <th>Status</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('archive_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{% if entity.dateHeure %}{{ entity.dateHeure|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.codeProduct }}</td>
-                <td>{{ entity.serialNumber }}</td>
-                <td>{{ entity.movement }}</td>
-                <td>{{ entity.status }}</td>
-                <td>{{ entity.default }}</td>
-                <td>{{ entity.description }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('archive_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('archive_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+        {# table body #}
+        {% for article in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ article.id }}</td>
+                <td>{{ article.dateHeure|date('Y-m-d H:i:s')}}</td>
+                <td>{{ article.codeProduct}}</td>
+                <td>{{ article.serialNumber }}</td>
+                <td>{{ article.movement }}</td>
+                <td>{{ article.status }}</td>
+                <td>{{ article.default }}</td>
+                <td>{{ article.description }}</td>
             </tr>
         {% endfor %}
-        </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('archive_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cb2812f29a32bc7fc9b8a00600d6ed27",
+    "hash": "430bfa166035a4c7fb7535f60ea2aecc",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -348,16 +348,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "1986ff3a945b584c6505d07eae92d77e41131078"
+                "reference": "0b9e27037c4fdbad515ee5ec89842e9091a6480f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/1986ff3a945b584c6505d07eae92d77e41131078",
-                "reference": "1986ff3a945b584c6505d07eae92d77e41131078",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/0b9e27037c4fdbad515ee5ec89842e9091a6480f",
+                "reference": "0b9e27037c4fdbad515ee5ec89842e9091a6480f",
                 "shasum": ""
             },
             "require": {
@@ -365,6 +365,7 @@
                 "doctrine/doctrine-cache-bundle": "~1.0",
                 "jdorn/sql-formatter": "~1.1",
                 "php": ">=5.3.2",
+                "symfony/console": "~2.3",
                 "symfony/doctrine-bridge": "~2.2",
                 "symfony/framework-bundle": "~2.3"
             },
@@ -383,7 +384,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -421,7 +422,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2015-02-28 11:04:45"
+            "time": "2015-05-28 12:27:15"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -871,6 +872,133 @@
             "time": "2014-01-12 16:20:24"
         },
         {
+            "name": "knplabs/knp-components",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/knp-components.git",
+                "reference": "6d091c2f16eec2769db38f38e08c7bd5847ce072"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/6d091c2f16eec2769db38f38e08c7bd5847ce072",
+                "reference": "6d091c2f16eec2769db38f38e08c7bd5847ce072",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": "~1.0@beta",
+                "doctrine/orm": "~2.4",
+                "phpunit/phpunit": "~4.2",
+                "ruflin/elastica": "~1.0",
+                "symfony/event-dispatcher": "~2.5"
+            },
+            "suggest": {
+                "doctrine/common": "to allow usage pagination with Doctrine ArrayCollection",
+                "doctrine/mongodb-odm": "to allow usage pagination with Doctrine ODM MongoDB",
+                "doctrine/orm": "to allow usage pagination with Doctrine ORM",
+                "propel/propel1": "to allow usage pagination with Propel ORM",
+                "ruflin/Elastica": "to allow usage pagination with ElasticSearch Client",
+                "solarium/solarium": "to allow usage pagination with Solarium Client"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Component": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/knp-components/contributors"
+                }
+            ],
+            "description": "Knplabs component library",
+            "homepage": "http://github.com/KnpLabs/knp-components",
+            "keywords": [
+                "components",
+                "knp",
+                "knplabs",
+                "pager",
+                "paginator"
+            ],
+            "time": "2014-10-06 10:38:10"
+        },
+        {
+            "name": "knplabs/knp-paginator-bundle",
+            "version": "2.4.1",
+            "target-dir": "Knp/Bundle/PaginatorBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
+                "reference": "701dffe02dbe4aa8784d3d9e5343985318ef5e2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/701dffe02dbe4aa8784d3d9e5343985318ef5e2c",
+                "reference": "701dffe02dbe4aa8784d3d9e5343985318ef5e2c",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-components": "~1.2",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.0",
+                "twig/twig": "~1.5"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\PaginatorBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony2 Community",
+                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+                }
+            ],
+            "description": "Paginator bundle for Symfony2 to automate pagination and simplify sorting and other features",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "knp",
+                "knplabs",
+                "pager",
+                "pagination",
+                "paginator"
+            ],
+            "time": "2014-09-15 15:49:24"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "v1.2.1",
             "source": {
@@ -1172,16 +1300,16 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v2.0.3",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "cde03c48d490d805ef1349e5108f8b3085981ead"
+                "reference": "2c2a71f1c77d9765c12638c4724d9ca23658a810"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cde03c48d490d805ef1349e5108f8b3085981ead",
-                "reference": "cde03c48d490d805ef1349e5108f8b3085981ead",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/2c2a71f1c77d9765c12638c4724d9ca23658a810",
+                "reference": "2c2a71f1c77d9765c12638c4724d9ca23658a810",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1341,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-05-22 14:21:04"
+            "time": "2015-05-28 14:22:40"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1450,16 +1578,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.7",
+            "version": "v2.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "0449d0e1178bc8e934520b20432d1705c3b25e7e"
+                "reference": "7ae1934082d9ac299303b146e4a999274a723e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/0449d0e1178bc8e934520b20432d1705c3b25e7e",
-                "reference": "0449d0e1178bc8e934520b20432d1705c3b25e7e",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/7ae1934082d9ac299303b146e4a999274a723e94",
+                "reference": "7ae1934082d9ac299303b146e4a999274a723e94",
                 "shasum": ""
             },
             "require": {
@@ -1550,20 +1678,20 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "The Symfony PHP framework",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "framework"
             ],
-            "time": "2015-05-11 01:58:49"
+            "time": "2015-05-27 00:17:10"
         },
         {
             "name": "twig/extensions",
