@@ -2668,7 +2668,7 @@ Dropdown Menu
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 999999;
   display: none;
   float: left;
   list-style: none;
@@ -2899,6 +2899,7 @@ Dropdown Checkboxes
   opacity: 0 ;
   filter: alpha(opacity=0) ;
   margin-top: 0px;
+  z-index: 999999;
 }
 .btn-group.dropup > .dropdown-menu {
   margin-top: 0px;
@@ -5727,8 +5728,8 @@ Responsive & Scrollable Tables
 ***/
 .table-scrollable {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  /*overflow-x: hidden;
+  overflow-y: hidden;*/
   border: 1px solid #dddddd;
   margin: 10px 0 !important;
 }
@@ -13895,3 +13896,6 @@ Transparent Button
   background: transparent;
   color: #888;
 }
+
+
+

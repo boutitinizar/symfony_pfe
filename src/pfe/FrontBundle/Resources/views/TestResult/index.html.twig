@@ -9,7 +9,7 @@
             {# sorting of properties based on query components #}
             <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
             <th{% if pagination.isSorted('a.dateHeure') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'dateHeure', 'a.dateHeure') }}</th>
-            <th{% if pagination.isSorted('a.codeProduc't) %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'codeProduct', 'a.codeProduct') }}</th>
+            <th{% if pagination.isSorted('a.codeProduc') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'codeProduct', 'a.codeProduct') }}</th>
             <th{% if pagination.isSorted('a.serialNumber') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'serialNumber', 'a.serialNumber') }}</th>
             <th{% if pagination.isSorted('a.movement') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'movement', 'a.movement') }}</th>
             <th{% if pagination.isSorted('a.status') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'status', 'a.status') }}</th>

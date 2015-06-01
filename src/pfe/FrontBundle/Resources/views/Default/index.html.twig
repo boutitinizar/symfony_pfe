@@ -31,9 +31,13 @@
     'assets/global/plugins/jquery.cokie.min.js'
     'assets/global/plugins/uniform/jquery.uniform.min.js'
     'assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    'assets/global/plugins/select2/select2.min.js'
+    'assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'
+    'assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'
     'assets/global/scripts/metronic.js'
     'assets/admin/layout4/scripts/layout.js'
     'assets/admin/layout4/scripts/demo.js'
+    'assets/admin/pages/scripts/table-managed.js'
     output='js/app.js' %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -42,7 +46,7 @@
             Metronic.init(); // init metronic core components
             Layout.init(); // init current layout
             Demo.init(); // init demo features
-            TableAdvanced.init();
+            TableManaged.init();
         });
     </script>
 {% endblock %}

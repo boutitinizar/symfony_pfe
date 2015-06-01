@@ -24,9 +24,8 @@ class LigneController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('pfeFrontBundle:Ligne')->findAll();
-
         return $this->render('pfeFrontBundle:Ligne:index.html.twig', array(
-            'entities' => $entities,
+            'entities' => $entities
         ));
     }
     /**
@@ -217,8 +216,13 @@ class LigneController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('ligne_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->add('submit', 'submit', [
+                'label' => 'Delete',
+                'attr' => [
+                    'class' => 'btn red  btn-lg pull-right',
+                ],
+                ])
+            ->getForm();
     }
+
 }
