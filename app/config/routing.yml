@@ -3,3 +3,6 @@ pfe_front:
     prefix:   /front
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+fos_user_security_login:
+    path:      /
+    defaults:  { _controller: FOSUserBundle:Security:login, _method: POST }

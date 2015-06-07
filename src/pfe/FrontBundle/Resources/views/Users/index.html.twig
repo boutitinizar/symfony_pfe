@@ -1,0 +1,100 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block titleh1 %} Users List{% endblock %}
+{% block breadcrumb %}
+    {{ parent() }}
+    <li>
+        <a href="#"> Users List</a>
+    </li>
+{% endblock %}
+{% block body -%}
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i> </div>
+        <div class="tools">
+            <a class="fullscreen" href="javascript:;"> </a>
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                        <a href="{{ path('fos_user_registration_register') }}" id="sample_editable_1_new" class="btn blue-hoki">
+                            Add New <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group pull-right">
+
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="javascript:;">
+                                    Print </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Save as PDF </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Export to Excel </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-striped table-bordered table-hover" id="sample_users">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom / Login</th>
+                <th>Email</th>
+                <th>Etat</th>
+                <th>Post</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('users_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.enabled }}</td>
+                <td>{{ entity.roles[0] }}</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-sm green" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-cog"></i>
+                            <span class="hidden-sm hidden-xs">Actions&nbsp;</span><i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="{{ path('users_show', { 'id': entity.id }) }}"><i class="fa fa-plus"></i>Show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('users_edit', { 'id': entity.id }) }}"><i class="fa fa-pencil"></i>Edit</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+    {% endblock %}

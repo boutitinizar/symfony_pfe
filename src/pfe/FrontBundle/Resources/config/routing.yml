@@ -1,3 +1,7 @@
+pfe_front_users:
+    resource: "@pfeFrontBundle/Resources/config/routing/users.yml"
+    prefix:   /users
+
 pfe_front_archive:
     resource: "@pfeFrontBundle/Resources/config/routing/testresult.yml"
     prefix:   /archive

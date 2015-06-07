@@ -1,0 +1,21 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block titleh1 %} Users List{% endblock %}
+{% block breadcrumb %}
+    {{ parent() }}
+    <li>
+        <a href="#"> Users List</a>
+    </li>
+{% endblock %}
+{% block body -%}
+    <h1>Users creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('users') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

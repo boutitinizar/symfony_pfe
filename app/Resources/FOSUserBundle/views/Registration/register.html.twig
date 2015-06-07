@@ -1,0 +1,17 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block titleh1 %} Ajouter un nouvel utilisateur{% endblock %}
+{% block breadcrumb %}
+    {{ parent() }}
+    <li>
+        <a href="#"> Nouvel utilisateur</a>
+    </li>
+{% endblock %}
+{% block body -%}
+<div class="portlet light">
+    <div class="portlet-title">
+        </div>
+    <div class="portlet-body form">
+    {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+     </div>
+</div>
+{% endblock body %}

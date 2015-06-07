@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Valeo | Interior Controls</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+    {% stylesheets
+    'assets/global/plugins/font-awesome/css/font-awesome.min.css'
+    'assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
+    'assets/global/plugins/bootstrap/css/bootstrap.min.css'
+    'assets/global/plugins/uniform/css/uniform.default.css'
+    'assets/global/plugins/select2/select2.css'
+    'assets/admin/pages/css/login-soft.css'
+    'assets/global/css/components-md.css'
+    'assets/global/css/plugins-md.css'
+    'assets/admin/layout/css/layout.css'
+    'assets/admin/layout/css/themes/default.css"'
+    'assets/admin/layout/css/custom.css'
+    filter='cssrewrite' output='css/login.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-md login">
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <a href="#">
+        {% image 'assets/valeo-logo.png'
+        output='images/valeo-logo.png' %}
+        <img  class="logo-default" src="{{ asset_url }}" alt="Valeo"/>
+        {% endimage %}
+    </a>
+</div>
+<!-- END LOGO -->
+<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+<div class="menu-toggler sidebar-toggler">
+</div>
+<!-- END SIDEBAR TOGGLER BUTTON -->
+<!-- BEGIN LOGIN -->
+<div class="content">
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+
+    <!-- BEGIN FORGOT PASSWORD FORM -->
+    <form class="forget-form" action="index.html" method="post">
+        <h3>Forget Password ?</h3>
+        <p>
+            Enter your e-mail address below to reset your password.
+        </p>
+        <div class="form-group">
+            <div class="input-icon">
+                <i class="fa fa-envelope"></i>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="button" id="back-btn" class="btn">
+                <i class="m-icon-swapleft"></i> Back </button>
+            <button type="submit" class="btn blue pull-right">
+                Submit <i class="m-icon-swapright m-icon-white"></i>
+            </button>
+        </div>
+    </form>
+    <!-- END FORGOT PASSWORD FORM -->
+
+</div>
+<!-- END LOGIN -->
+<!-- BEGIN COPYRIGHT -->
+<div class="copyright">
+    2015 &copy; Oumayma - Valeo Admin Dashboard .
+</div>
+{% javascripts
+'assets/global/plugins/jquery.min.js'
+'assets/global/plugins/jquery-migrate.min.js'
+'assets/global/plugins/bootstrap/js/bootstrap.min.js'
+'assets/global/plugins/jquery.blockui.min.js'
+'assets/global/plugins/uniform/jquery.uniform.min.js'
+'assets/global/plugins/jquery.cokie.min.js'
+'assets/global/plugins/jquery-validation/js/jquery.validate.min.js'
+'assets/global/plugins/backstretch/jquery.backstretch.min.js'
+'assets/global/plugins/select2/select2.min.js'
+'assets/global/scripts/metronic.js'
+'assets/admin/layout/scripts/layout.js'
+'assets/admin/layout/scripts/demo.js'
+'assets/admin/pages/scripts/login-soft.js'
+output='js/login.js' %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+<script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Login.init();
+        Demo.init();
+        // init background slide images
+        $.backstretch([
+                        "{{ asset('images/bg/1.jpg') }}",
+                        "{{ asset('images/bg/1.jpg') }}",
+                        "{{ asset('images/bg/1.jpg') }}",
+                        "{{ asset('images/bg/4.jpg') }}"
+                ], {
+                    fade: 1000,
+                    duration: 8000
+                }
+        );
+    });
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

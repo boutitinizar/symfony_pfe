@@ -1,0 +1,30 @@
+users:
+    path:     /
+    defaults: { _controller: "pfeFrontBundle:Users:index" }
+
+users_show:
+    path:     /{id}/show
+    defaults: { _controller: "pfeFrontBundle:Users:show" }
+
+users_new:
+    path:     /new
+    defaults: { _controller: "pfeFrontBundle:Users:new" }
+
+users_create:
+    path:     /create
+    defaults: { _controller: "pfeFrontBundle:Users:create" }
+    methods:  POST
+
+users_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "pfeFrontBundle:Users:edit" }
+
+users_update:
+    path:     /{id}/update
+    defaults: { _controller: "pfeFrontBundle:Users:update" }
+    methods:  [POST, PUT]
+
+users_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "pfeFrontBundle:Users:delete" }
+    methods:  [POST, DELETE]
