@@ -52,9 +52,11 @@ class RegistrationController extends BaseController
                 $response = new RedirectResponse($url);
             }
 
-            $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
+            //$dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
 
-            return $response;
+            //return $response;
+            $url = $this->generateUrl('users');
+            return $this->redirect($url);
         }
 
         return $this->render('FOSUserBundle:Registration:register.html.twig', array(

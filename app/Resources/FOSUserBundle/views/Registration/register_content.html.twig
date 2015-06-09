@@ -1,23 +1,29 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-
-
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST"
+      class="fos_user_registration_register" xmlns="http://www.w3.org/1999/html">
 
     <div class="form-group form-md-line-input form-md-floating-label">
         {{ form_widget(form.email, { 'attr': {'class': 'form-control' } }) }}
         <label for="form_control_1">Adresse e-mail</label>
         <span class="help-block">Adresse e-mail here...</span>
+        </br>
+        <span class="error-bloc">
+        {{ form_errors(form.email) }}</span>
     </div>
     <div class="form-group form-md-line-input form-md-floating-label">
         {{ form_widget(form.username, { 'attr': {'class': 'form-control' } }) }}
         <label for="form_control_1">Name</label>
         <span class="help-block">Enter your name here...</span>
+        </br>
+        <span class="error-bloc"> {{ form_errors(form.username) }}</span>
     </div>
     <div class="form-group form-md-line-input form-md-floating-label">
         {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control' } }) }}
         <label for="form_control_1">Password</label>
         <span class="help-block">Enter your password here...</span>
+        </br>
+        <span class="error-bloc">{{ form_errors(form.plainPassword.first) }}</span>
     </div>
 
     <div class="form-group form-md-line-input form-md-floating-label">
@@ -29,15 +35,17 @@
         {{ form_widget(form.roles) }}
         <label for="form_control_1">Poste</label>
     </div>
+    {{ form_rest(form) }}
     <div class="form-actions">
         <div class="row">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" class="btn blue" value="{{ 'registration.submit'|trans }}" />
-                <input type="reset" class="btn default value="Reset" / >
+                <input type="reset" class="btn" value="Reset" />
             </div>
         </div>
     </div>
     <div>
 
     </div>
+
 </form>

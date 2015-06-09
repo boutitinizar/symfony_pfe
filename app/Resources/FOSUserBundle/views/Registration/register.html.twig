@@ -9,6 +9,11 @@
 {% block body -%}
 <div class="portlet light">
     <div class="portlet-title">
+        {% for key, message in app.session.flashbag.all() %}
+            <div class="alert alert-{{ key }}">
+                {{ 'registration.flash.user_created'|trans({}, 'FOSUserBundle') }}
+            </div>
+        {% endfor %}
         </div>
     <div class="portlet-body form">
     {% include "FOSUserBundle:Registration:register_content.html.twig" %}
