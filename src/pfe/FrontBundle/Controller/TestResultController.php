@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use pfe\FrontBundle\Entity\TestResult;
 use pfe\FrontBundle\Form\TestResultType;
+use pfe\FrontBundle\Filter\ArchiveItemFilterType;
 
 /**
  * TestResult controller.
@@ -22,10 +23,19 @@ class TestResultController extends Controller
     public function indexAction(Request $request)
     {
 
-        $em    = $this->get('doctrine.orm.entity_manager');
-        $dql   = "SELECT a FROM pfeFrontBundle:TestResult a";
-        $query = $em->createQuery($dql);
 
+        $filterBuilder = $this->get('doctrine.orm.entity_manager')
+            ->getRepository('pfeFrontBundle:TestResult')
+            ->createQueryBuilder('e');
+
+        $form = $this->get('form.factory')->create(new ArchiveItemFilterType());
+        if ($request->query->has($form->getName())) {
+            // manually bind values from the request
+            $form->submit($request->query->get($form->getName()));
+            // build the query from the given form object
+            $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($form, $filterBuilder);
+        }
+        $query = $filterBuilder->getQuery();
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
@@ -34,7 +44,8 @@ class TestResultController extends Controller
         );
 
         return $this->render('pfeFrontBundle:TestResult:index.html.twig', array(
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'form' => $form->createView(),
         ));
     }
     /**
