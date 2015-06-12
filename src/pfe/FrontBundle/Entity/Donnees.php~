@@ -118,7 +118,7 @@ class Donnees
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getDate()
     {

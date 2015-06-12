@@ -1,0 +1,127 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block body -%}
+<div class="portlet light">
+    <div class="portlet-body form">
+
+    {{ form_start(form) }}
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.date, { 'attr': {'class': 'form-control date-picker' } }) }}
+        </div>
+        <div class="form-group form-md-radios">
+            <label>Equipe</label>
+            <div class="md-radio-inline">
+                <div class="md-radio">
+                    <input type="radio" id="radio6" name="radio2" id="MatBtn" class="md-radiobtn" checked="">
+                    <label for="radio6">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        Matin </label>
+                </div>
+                <div class="md-radio">
+                    <input type="radio" id="radio7" name="radio2" class="md-radiobtn">
+                    <label for="radio7">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        Midi </label>
+                </div>
+                <div class="md-radio">
+                    <input type="radio" id="radio8" name="radio2" class="md-radiobtn">
+                    <label for="radio8">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        Soir </label>
+                </div>
+            </div>
+        </div>
+
+        <div   style="display:none" class="form-group form-md-line-input form-md-floating-label">
+    {{ form_widget(form.heure, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Heure</label>
+            <span class="help-block">Enter Hate...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            <select class="form-control " id="MatinSelection" name="pfe_frontbundle_donnees[heure]" style="display: inline-block">
+                <option value="">&nbsp;</option>
+                <option value="06-07">06-07</option>
+                <option value="07-08">07-08</option>
+                <option value="08-09">08-09</option>
+                <option value="09-10">09-10</option>
+                <option value="10-11">10-11</option>
+                <option value="11-12">11-12</option>
+                <option value="12-13">12-13</option>
+                <option value="13-14">13-14</option>
+            </select>
+            <select class="form-control " id="MidiSelection" name=""  style="display:none">
+                <option value="">&nbsp;</option>
+                <option value="14-15">14-15</option>
+                <option value="15-16">15-16</option>
+                <option value="16-17">16-17</option>
+                <option value="17-18">17-18</option>
+                <option value="18-19">18-19</option>
+                <option value="19-20">19-20</option>
+                <option value="20-21">20-21</option>
+                <option value="21-22">21-22</option>
+            </select>
+            <select class="form-control " id="SoirSelection" name="" style="display:none">
+                <option value="">&nbsp;</option>
+                <option value="22-23">22-23</option>
+                <option value="23-00">23-00</option>
+                <option value="00-01">00-01</option>
+                <option value="01-02">01-02</option>
+                <option value="02-03">02-03</option>
+                <option value="03-04">03-04</option>
+                <option value="04-05">04-05</option>
+                <option value="05-06">05-06</option>
+            </select>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.nbrOp, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Nombre des opérateurs</label>
+            <span class="help-block">Enter Nombre des opérateurs...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.ligne, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">ligne</label>
+            <span class="help-block">Select ligne...</span>
+        </div>
+    <div class="form-group form-md-line-input form-md-floating-label">
+    {{ form_widget(form.mudas_logistique, { 'attr': {'class': 'form-control' } }) }}
+        <label for="form_control_1">Commentaire logistique</label>
+        <span class="help-block">Enter Commentaire logistique...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.mudas_maintenance, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Commentaire maintenance</label>
+            <span class="help-block">Enter Commentaire logistique...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.mudas_qualite, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Commentaire qualit</label>
+            <span class="help-block">Enter Commentaire qualit...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.mudas_changement_Ref, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Commentaire changement Réf</label>
+            <span class="help-block">Enter Commentaire changement Réf...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+        {{ form_widget(form.mudas_divers, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Commentaire divers</label>
+            <span class="help-block">Enter Commentaire changement divers...</span>
+        </div>
+        {{ form_widget(form._token) }}
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-10">
+                    {{ form_widget(form.save) }}
+                    <input type="reset" class="btn" value="Reset" />
+                </div>
+            </div>
+        </div>
+ </form>
+    </div>
+    </div>
+{% endblock %}

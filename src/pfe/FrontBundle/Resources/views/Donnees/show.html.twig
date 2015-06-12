@@ -1,0 +1,64 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block body -%}
+<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-bell-o"></i>   </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="#portlet-config" data-toggle="modal" class="config">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+    <table class="table table-striped table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{{ entity.heure }}</td>
+            </tr>
+            <tr>
+                <th>Nbrop</th>
+                <td>{{ entity.nbrOp }}</td>
+            </tr>
+            <tr>
+                <th>Mudas_logistique</th>
+                <td>{{ entity.mudaslogistique }}</td>
+            </tr>
+            <tr>
+                <th>Mudas_maintenance</th>
+                <td>{{ entity.mudasmaintenance }}</td>
+            </tr>
+            <tr>
+                <th>Mudas_qualite</th>
+                <td>{{ entity.mudasqualite }}</td>
+            </tr>
+            <tr>
+                <th>Mudas_changement_ref</th>
+                <td>{{ entity.mudaschangementRef }}</td>
+            </tr>
+            <tr>
+                <th>Mudas_divers</th>
+                <td>{{ entity.mudasdivers }}</td>
+            </tr>
+        </tbody>
+    </table>
+                </div>
+    <a class="btn green-meadow" href="{{ path('donnees') }}">
+        Back to the list
+    </a>
+    <a class="btn blue-hoki" href="{{ path('donnees_edit', { 'id': entity.id }) }}">
+        Edit
+    </a>
+    {{ form(delete_form) }}
+        </div>
+{% endblock %}

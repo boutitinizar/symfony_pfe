@@ -1,3 +1,7 @@
+pfe_front_donnees:
+    resource: "@pfeFrontBundle/Resources/config/routing/donnees.yml"
+    prefix:   /donnees
+
 pfe_front_users:
     resource: "@pfeFrontBundle/Resources/config/routing/users.yml"
     prefix:   /users

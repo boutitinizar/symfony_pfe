@@ -62,6 +62,32 @@
             Demo.init(); // init demo features
             TableManaged.init();
             ComponentsPickers.init();
+            $("#radio6").click(function(){
+                $("#MatinSelection").show();
+                $("#MatinSelection").attr("name","pfe_frontbundle_donnees[heure]");
+                $("#MidiSelection").hide();
+                $("#MidiSelection").attr("name"," ");
+                $("#SoirSelection").hide();
+                $("#SoirSelection").attr("name"," ");
+            });
+            $("#radio7").click(function(){
+                $("#MatinSelection").hide();
+                $("#MatinSelection").attr("name"," ");
+                $("#MidiSelection").show();
+                $("#MidiSelection").attr("name","pfe_frontbundle_donnees[heure]");
+                $("#SoirSelection").hide();
+                $("#SoirSelection").attr("name"," ");
+            });
+            $("#radio8").click(function(){
+                $("#MatinSelection").hide();
+                $("#MatinSelection").attr("name"," ");
+                $("#MidiSelection").hide();
+                $("#MidiSelection").attr("name","");
+                $("#SoirSelection").show();
+                $("#SoirSelection").attr("name","pfe_frontbundle_donnees[heure]");
+            });
+
+
         });
     </script>
 {% endblock %}

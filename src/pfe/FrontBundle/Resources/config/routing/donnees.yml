@@ -1,0 +1,30 @@
+donnees:
+    path:     /
+    defaults: { _controller: "pfeFrontBundle:Donnees:index" }
+
+donnees_show:
+    path:     /{id}/show
+    defaults: { _controller: "pfeFrontBundle:Donnees:show" }
+
+donnees_new:
+    path:     /new
+    defaults: { _controller: "pfeFrontBundle:Donnees:new" }
+
+donnees_create:
+    path:     /create
+    defaults: { _controller: "pfeFrontBundle:Donnees:create" }
+    methods:  POST
+
+donnees_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "pfeFrontBundle:Donnees:edit" }
+
+donnees_update:
+    path:     /{id}/update
+    defaults: { _controller: "pfeFrontBundle:Donnees:update" }
+    methods:  [POST, PUT]
+
+donnees_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "pfeFrontBundle:Donnees:delete" }
+    methods:  [POST, DELETE]
