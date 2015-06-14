@@ -77,7 +77,7 @@
         {% for entity in entities %}
             <tr>
 
-                <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ entity.heure }}</td>
                 <td>{{ entity.nbrOp }}</td>
                 <td>{{ entity.ligne }}</td>
