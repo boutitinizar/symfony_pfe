@@ -1,3 +1,7 @@
+pfe_front_kosu_suivi:
+    path:     /kosu/suivi
+    defaults: { _controller: pfeFrontBundle:Kosu:index }
+
 pfe_front_donnees:
     resource: "@pfeFrontBundle/Resources/config/routing/donnees.yml"
     prefix:   /donnees

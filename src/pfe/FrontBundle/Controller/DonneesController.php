@@ -40,7 +40,7 @@ class DonneesController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-         //var_dump($entity);die(); exit;
+        //var_dump($entity);die(); exit;
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();

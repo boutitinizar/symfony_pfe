@@ -54,35 +54,35 @@ class Donnees
     /**
      * @var string
      *
-     * @ORM\Column(name="mudas_logistique", type="string", length=255, nullable=false)
+     * @ORM\Column(name="mudas_logistique", type="string", length=255, nullable=true)
      */
     private $mudas_logistique;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mudas_maintenance", type="string", length=255, nullable=false)
+     * @ORM\Column(name="mudas_maintenance", type="string", length=255, nullable=true)
      */
     private $mudas_maintenance;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mudas_qualite", type="string", length=255, nullable=false)
+     * @ORM\Column(name="mudas_qualite", type="string", length=255, nullable=true)
      */
     private $mudas_qualite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mudas_changement_Ref", type="string", length=255, nullable=false)
+     * @ORM\Column(name="mudas_changement_Ref", type="string", length=255, nullable=true)
      */
     private $mudas_changement_Ref;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mudas_divers", type="string", length=255, nullable=false)
+     * @ORM\Column(name="mudas_divers", type="string", length=255, nullable=true)
      */
     private $mudas_divers;
 

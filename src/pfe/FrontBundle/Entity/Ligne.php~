@@ -264,37 +264,4 @@ class Ligne
     public function  __toString(){
         return $this->getNomLigne();
     }
-
-    /**
-     * Add donnees
-     *
-     * @param \pfe\FrontBundle\Entity\Donnees $donnees
-     * @return Ligne
-     */
-    public function addDonnee(\pfe\FrontBundle\Entity\Donnees $donnees)
-    {
-        $this->donnees[] = $donnees;
-
-        return $this;
-    }
-
-    /**
-     * Remove donnees
-     *
-     * @param \pfe\FrontBundle\Entity\Donnees $donnees
-     */
-    public function removeDonnee(\pfe\FrontBundle\Entity\Donnees $donnees)
-    {
-        $this->donnees->removeElement($donnees);
-    }
-
-    /**
-     * Get donnees
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDonnees()
-    {
-        return $this->donnees;
-    }
 }
