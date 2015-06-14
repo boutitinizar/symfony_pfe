@@ -1,29 +1,29 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
-        {% stylesheets
-            'assets/global/plugins/font-awesome/css/font-awesome.min.css'
-            'assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
-            'assets/global/plugins/bootstrap/css/bootstrap.min.css'
-            'assets/global/plugins/uniform/css/uniform.default.css'
-            'assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
-            'assets/global/plugins/clockface/css/clockface.css'
-            'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'
-            'assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css'
-            'assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css'
-            'assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
-            'assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'
-            'assets/global/css/components-md.css'
-            'assets/global/css/plugins-md.css'
-            'assets/admin/layout4/css/layout.css'
-            'assets/admin/layout4/css/themes/light.css'
-            'assets/admin/layout4/css/custom.css'
-            'assets/global/plugins/select2/select2.css'
-            'assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
-            'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css'
-        filter='cssrewrite' output='css/app.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    {% stylesheets
+    'assets/global/plugins/font-awesome/css/font-awesome.min.css'
+    'assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
+    'assets/global/plugins/bootstrap/css/bootstrap.min.css'
+    'assets/global/plugins/uniform/css/uniform.default.css'
+    'assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+    'assets/global/plugins/clockface/css/clockface.css'
+    'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'
+    'assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css'
+    'assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css'
+    'assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
+    'assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'
+    'assets/global/css/components-md.css'
+    'assets/global/css/plugins-md.css'
+    'assets/admin/layout4/css/layout.css'
+    'assets/admin/layout4/css/themes/light.css'
+    'assets/admin/layout4/css/custom.css'
+    'assets/global/plugins/select2/select2.css'
+    'assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
+    'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css'
+    filter='cssrewrite' output='css/app.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}
 {% block javascripts %}
     {% javascripts

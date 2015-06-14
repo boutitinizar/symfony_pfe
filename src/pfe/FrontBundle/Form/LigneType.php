@@ -21,7 +21,6 @@ class LigneType extends AbstractType
             ->add('superviseur')
             ->add('teamleader')
             ->add('objectifligne')
-            ->add('CodeProduit')
         ;
     }
     

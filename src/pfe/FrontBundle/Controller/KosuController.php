@@ -25,15 +25,20 @@ class KosuController extends Controller{
             $form->submit($request->query->get($form->getName()));
 
             // initialize a query builder
-            $filterBuilder = $this->get('doctrine.orm.entity_manager')
+            $filterBuilder = $this->getDoctrine()
                 ->getRepository('pfeFrontBundle:Donnees')
                 ->createQueryBuilder('e');
-            var_dump($filterBuilder->getDql());
-            die();
-            exit;
+
             // build the query from the given form object
             $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($form, $filterBuilder);
 
+
+          $query = $filterBuilder->getQuery();
+
+            $products = $query->getResult();
+            var_dump($products);
+            die();
+            exit;
             // now look at the DQL =)
 
         }

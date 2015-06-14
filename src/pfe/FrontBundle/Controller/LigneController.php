@@ -39,6 +39,8 @@ class LigneController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
+            var_dump($entity);die();
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
