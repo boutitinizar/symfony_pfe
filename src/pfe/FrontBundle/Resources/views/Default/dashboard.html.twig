@@ -1,0 +1,14 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+{% block breadcrumb %}
+{% endblock %}
+{% block body -%}
+<div class="portlet light">
+    <div class="portlet-body">
+        {% image 'assets/dash.jpg'
+        output='images/dash.jpg' %}
+        <img class="img-responsive" src="{{ asset_url }}" alt="Valeo"/>
+        {% endimage %}
+        </div>
+        </div>
+
+{% endblock %}

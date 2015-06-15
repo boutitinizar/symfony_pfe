@@ -1,29 +1,29 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
-        {% stylesheets
-            'assets/global/plugins/font-awesome/css/font-awesome.min.css'
-            'assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
-            'assets/global/plugins/bootstrap/css/bootstrap.min.css'
-            'assets/global/plugins/uniform/css/uniform.default.css'
-            'assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
-            'assets/global/plugins/clockface/css/clockface.css'
-            'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'
-            'assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css'
-            'assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css'
-            'assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
-            'assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'
-            'assets/global/css/components-md.css'
-            'assets/global/css/plugins-md.css'
-            'assets/admin/layout4/css/layout.css'
-            'assets/admin/layout4/css/themes/light.css'
-            'assets/admin/layout4/css/custom.css'
-            'assets/global/plugins/select2/select2.css'
-            'assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
-            'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css'
-        filter='cssrewrite' output='css/app.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    {% stylesheets
+    'assets/global/plugins/font-awesome/css/font-awesome.min.css'
+    'assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
+    'assets/global/plugins/bootstrap/css/bootstrap.min.css'
+    'assets/global/plugins/uniform/css/uniform.default.css'
+    'assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+    'assets/global/plugins/clockface/css/clockface.css'
+    'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'
+    'assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css'
+    'assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css'
+    'assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
+    'assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'
+    'assets/global/css/components-md.css'
+    'assets/global/css/plugins-md.css'
+    'assets/admin/layout4/css/layout.css'
+    'assets/admin/layout4/css/themes/light.css'
+    'assets/admin/layout4/css/custom.css'
+    'assets/global/plugins/select2/select2.css'
+    'assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
+    'assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css'
+    filter='cssrewrite' output='css/app.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}
 {% block javascripts %}
     {% javascripts
@@ -37,6 +37,22 @@
     'assets/global/plugins/jquery.cokie.min.js'
     'assets/global/plugins/uniform/jquery.uniform.min.js'
     'assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
+    'assets/global/plugins/flot/jquery.flot.min.js'
+    'assets/global/plugins/flot/jquery.flot.resize.min.js'
+    'assets/global/plugins/flot/jquery.flot.pie.min.js'
+    'assets/global/plugins/flot/jquery.flot.stack.min.js'
+    'assets/global/plugins/flot/jquery.flot.crosshair.min.js'
+    'assets/global/plugins/flot/jquery.flot.categories.min.js'
+    'assets/global/plugins/amcharts/amcharts/amcharts.js'
+    'assets/global/plugins/amcharts/amcharts/serial.js'
+    'assets/global/plugins/amcharts/amcharts/pie.js'
+    'assets/global/plugins/amcharts/amcharts/radar.js'
+    'assets/global/plugins/amcharts/amcharts/themes/light.js'
+    'assets/global/plugins/amcharts/amcharts/themes/patterns.js'
+    'assets/global/plugins/amcharts/amcharts/themes/chalk.js'
+    'assets/global/plugins/amcharts/ammap/ammap.js'
+    'assets/global/plugins/amcharts/ammap/maps/js/worldLow.js'
+    'assets/global/plugins/amcharts/amstockcharts/amstock.js'
     'assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js'
     'assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js'
     'assets/global/plugins/clockface/js/clockface.js'
@@ -52,6 +68,7 @@
     'assets/admin/layout4/scripts/demo.js'
     'assets/admin/pages/scripts/table-managed.js'
     'assets/admin/pages/scripts/components-pickers.js'
+    'assets/admin/pages/scripts/charts-flotcharts.js'
     output='js/app.js' %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -62,6 +79,10 @@
             Demo.init(); // init demo features
             TableManaged.init();
             ComponentsPickers.init();
+            ChartsFlotcharts.init();
+            ChartsFlotcharts.initCharts();
+            ChartsFlotcharts.initPieCharts();
+            ChartsFlotcharts.initBarCharts();
             $("#radio6").click(function(){
                 $("#MatinSelection").show();
                 $("#MatinSelection").attr("name","pfe_frontbundle_donnees[heure]");

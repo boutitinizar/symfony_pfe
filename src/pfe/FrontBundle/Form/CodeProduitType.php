@@ -19,6 +19,7 @@ class CodeProduitType extends AbstractType
             ->add('description')
             ->add('Ligne')
         ;
+
     }
     
     /**

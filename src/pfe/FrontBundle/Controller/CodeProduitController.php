@@ -217,7 +217,12 @@ class CodeProduitController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('produit_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', [
+                'label' => 'Delete',
+                'attr' => [
+                    'class' => 'btn red  btn-lg pull-right',
+                ],
+            ])
             ->getForm()
         ;
     }

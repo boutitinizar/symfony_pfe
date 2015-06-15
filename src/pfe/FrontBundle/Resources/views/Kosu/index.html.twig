@@ -1,4 +1,126 @@
-<form method="get" action="">
-    {{ form_rest(form) }}
-    <input type="submit" name="submit-filter" value="filter" />
+
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+
+{% block body -%}
+
+    <div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i> </div>
+        <div class="tools">
+            <a class="fullscreen" href="javascript:;"> </a>
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+
+
+
+<form method="get" action=""><td>
+        <div class="input-group date form_datetime margin-bottom-5" >
+            <label>Date debut</label>
+            {{ form_widget(form.date.left_datetime, { 'attr': {'class': 'form-control' } }) }}
+            <span class="input-group-btn">
+                    <button class="btn default date-reset" type="button"><i class="fa fa-times"></i></button>
+                    <button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+                    </span>
+        </div>
+        <div class="input-group date form_datetime margin-bottom-10"  >
+            <label>Date Fin</label>
+            {{ form_widget(form.date.right_datetime, { 'attr': {'class': 'form-control' } }) }}
+            <span class="input-group-btn">
+                                            <button class="btn default date-reset" type="button"><i class="fa fa-times"></i></button>
+                                            <button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+                                            </span>
+        </div>
+        <!-- /date -->
+        <div class="form-group form-md-radios ">
+            <label>Equipe</label>
+            <div class="md-radio-inline">
+                <div class="md-radio">
+                    <input type="radio" id="radio6" name="radio2" id="MatBtn" class="md-radiobtn" checked="">
+                    <label for="radio6">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        Matin </label>
+                </div>
+                <div class="md-radio">
+                    <input type="radio" id="radio7" name="radio2" class="md-radiobtn">
+                    <label for="radio7">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        Midi </label>
+                </div>
+                <div class="md-radio">
+                    <input type="radio" id="radio8" name="radio2" class="md-radiobtn">
+                    <label for="radio8">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        Soir </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            <select class="form-control " id="MatinSelection" name="pfe_frontbundle_donnees[heure]" style="display: inline-block">
+                <option value="">&nbsp;</option>
+                <option value="06-07">06-07</option>
+                <option value="07-08">07-08</option>
+                <option value="08-09">08-09</option>
+                <option value="09-10">09-10</option>
+                <option value="10-11">10-11</option>
+                <option value="11-12">11-12</option>
+                <option value="12-13">12-13</option>
+                <option value="13-14">13-14</option>
+            </select>
+            <select class="form-control " id="MidiSelection" name=""  style="display:none">
+                <option value="">&nbsp;</option>
+                <option value="14-15">14-15</option>
+                <option value="15-16">15-16</option>
+                <option value="16-17">16-17</option>
+                <option value="17-18">17-18</option>
+                <option value="18-19">18-19</option>
+                <option value="19-20">19-20</option>
+                <option value="20-21">20-21</option>
+                <option value="21-22">21-22</option>
+            </select>
+            <select class="form-control " id="SoirSelection" name="" style="display:none">
+                <option value="">&nbsp;</option>
+                <option value="22-23">22-23</option>
+                <option value="23-00">23-00</option>
+                <option value="00-01">00-01</option>
+                <option value="01-02">01-02</option>
+                <option value="02-03">02-03</option>
+                <option value="03-04">03-04</option>
+                <option value="04-05">04-05</option>
+                <option value="05-06">05-06</option>
+            </select>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label has-info">
+            <select class="form-control" id="form_control_1">
+                <option value=""></option>
+    {% for item in entities %}
+                <option value="{{ item.id }}">{{ item.nomLigne }}</option>
+    {% endfor %}
+
+            </select>
+            <label for="form_control_1">Ligne</label>
+        </div>
+
+
+        <div class="margin-bottom-5">
+            <button  name="submit-filter" type="submit" class="btn btn-sm green filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+        </div>
+        <button  type="reset" class="btn btn-sm   blue-hoki filter-cancel"><i class="fa fa-times"></i> Reset</button>
+
 </form>
+</div>
+    </div>
+{% endblock %}

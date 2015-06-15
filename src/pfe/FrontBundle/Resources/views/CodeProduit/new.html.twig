@@ -1,15 +1,37 @@
 {% extends 'pfeFrontBundle:Default:index.html.twig' %}
 
 {% block body -%}
-    <h1>CodeProduit creation</h1>
+<div class="portlet light">
+    <div class="portlet-body">
+        <h1>Code Produit creation</h1>
 
-    {{ form(form) }}
+        {{ form_start(form) }}
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.name, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Nom Code Produit</label>
+            <span class="help-block">Enter Nom Code Produit ...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.description, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Description </label>
+            <span class="help-block">Enter description ...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.Ligne, { 'attr': {'class': 'form-control' } }) }}
+            <span class="help-block">Enter Ligne ...</span>
+        </div>
+        {{ form_widget(form._token) }}
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-10">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('produit') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <input type="SUBMIT" class="btn" value="Submit" />
+                    <input type="reset" class="btn" value="Reset" />
+                </div>
+            </div>
+        </div>
+        </form>
+
+    </div>
+</div>
 {% endblock %}

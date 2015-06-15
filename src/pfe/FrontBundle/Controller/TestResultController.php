@@ -36,13 +36,16 @@ class TestResultController extends Controller
             $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($form, $filterBuilder);
         }
         $query = $filterBuilder->getQuery();
+
+
+
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1)/*page number*/,
             10/*limit per page*/
         );
-
+        $data = $query->getArrayResult();
         return $this->render('pfeFrontBundle:TestResult:index.html.twig', array(
             'pagination' => $pagination,
             'form' => $form->createView(),

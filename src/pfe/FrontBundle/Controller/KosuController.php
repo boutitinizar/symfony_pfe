@@ -21,6 +21,7 @@ class KosuController extends Controller{
         $form = $this->get('form.factory')->create(new KosuItemFilterType());
 
         if ($request->query->has($form->getName())) {
+
             // manually bind values from the request
             $form->submit($request->query->get($form->getName()));
 
@@ -36,15 +37,24 @@ class KosuController extends Controller{
           $query = $filterBuilder->getQuery();
 
             $products = $query->getResult();
-            var_dump($products);
-            die();
-            exit;
+
+
+
+            return $this->render('pfeFrontBundle:Kosu:suivi.html.twig', array(
+                'products' => $products,
+            ));
+
+
             // now look at the DQL =)
 
         }
+        ///////ligne
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('pfeFrontBundle:Ligne')->findAll();
 
         return $this->render('pfeFrontBundle:Kosu:index.html.twig', array(
             'form' => $form->createView(),
+            'entities'=>$entities
         ));
 
        /* $repository  = $this->getDoctrine()

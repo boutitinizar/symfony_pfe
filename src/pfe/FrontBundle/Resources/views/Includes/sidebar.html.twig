@@ -18,18 +18,23 @@
                     <span class="title">Dashboard</span>
                 </a>
             </li>
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_RESPONSABLE') or is_granted('ROLE_SUPERVISEUR')   %}
             <li>
                 <a href="{{ path('ligne') }}">
                     <i class="icon-diamond"></i>
                     <span class="title">Ligne</span>
                 </a>
             </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_RESPONSABLE') or is_granted('ROLE_SUPERVISEUR')   %}
             <li>
                 <a href="{{ path('produit') }}">
                     <i class="icon-paper-plane"></i>
                     <span class="title">Produit</span>
                 </a>
             </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_RESPONSABLE') %}
             <li class="last">
                 <a href="javascript:;">
                     <i class="icon-bar-chart"></i>
@@ -65,7 +70,7 @@
                     <span class="title">Archive</span>
                 </a>
             </li>
-
+{% endif %}
 
 
             <li class="last">
@@ -80,11 +85,13 @@
                             <i class="icon-puzzle"></i>
                             Insertion des donneés</a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_RESPONSABLE') or is_granted('ROLE_SUPERVISEUR')   %}
                     <li>
                         <a href="{{ path('pfe_front_kosu_suivi') }}">
                             <i class="icon-bar-chart"></i>
                             Suivi</a>
                     </li>
+                    {% endif %}
                 </ul>
             </li>
 

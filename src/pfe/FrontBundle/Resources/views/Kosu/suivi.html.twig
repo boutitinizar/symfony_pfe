@@ -1,0 +1,130 @@
+{% extends 'pfeFrontBundle:Default:index.html.twig' %}
+
+{% block body -%}
+    <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-bar-chart font-green-haze"></i>
+                <span class="caption-subject bold uppercase font-green-haze">Suivi MOD</span>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="fullscreen">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+    <div class="portlet-body">
+        <div id="chart_3" class="chart" style="height: 400px;">
+        </div>
+    </div>
+    </div>
+    <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-bar-chart font-green-haze"></i>
+                <span class="caption-subject bold uppercase font-green-haze">Suivi KOSU temps Equipe </span>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="fullscreen">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+         <table class="table table-striped table-bordered " >
+  <tr>
+    <td width="116" valign="top"><p>Temps net de travail </p></td>
+    <td width="56" valign="top"><p>3300</p></td>
+    <td width="58" valign="top"><p>3600</p></td>
+    <td width="58" valign="top"><p>3600</p></td>
+    <td width="56" valign="top"><p>1800</p></td>
+    <td width="59" valign="top"><p>3600</p></td>
+    <td width="59" valign="top"><p>3600</p></td>
+    <td width="55" valign="top"><p>3600</p></td>
+    <td width="73" valign="top"><p>3000</p></td>
+    <td width="83" valign="top"><p>26100</p></td>
+    <td width="130" valign="top"><p>Temps Net de production</p></td>
+  </tr>
+  <tr>
+    <td width="116" valign="top"> Nombre
+      d'Opérateurs (2) </td>
+    <td width="56" ><p>9</p></td>
+    <td width="58"  "><p>9</p></td>
+    <td width="58"  "><p>9</p></td>
+    <td width="56"  "><p>9</p></td>
+    <td width="59"  "><p>9</p></td>
+    <td width="59"  "><p>9</p></td>
+    <td width="55"  "><p>9</p></td>
+    <td width="73"  "><p>9</p></td>
+    <td width="83"  "><p>72</p></td>
+    <td width="130" p"><p>Moyenne du nombre d'opérateurs</p></td>
+  </tr>
+  <tr>
+    <td width="116" valign="top"> Quantité
+      pièces bonnes (3)</p></td>
+    <td width="56" ><p>252</p></td>
+    <td width="58" ><p>250</p></td>
+    <td width="58" ><p>255</p></td>
+    <td width="56" ><p>126</p></td>
+    <td width="59" ><p>258</p></td>
+    <td width="59" ><p>257</p></td>
+    <td width="55" ><p>252</p></td>
+    <td width="73" ><p>251</p></td>
+    <td width="83" ><p>1901</p></td>
+    <td width="130"><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="116" ><p>KOSU = (1) x (2)    / (3)</p></td>
+    <td width="56" ><p>117</p></td>
+    <td width="58" ><p>129</p></td>
+    <td width="58" ><p>127</p></td>
+    <td width="56" ><p>128</p></td>
+    <td width="59" ><p>125</p></td>
+    <td width="59" ><p>126</p></td>
+    <td width="55" ><p>128</p></td>
+    <td width="73" ><p>107</p></td>
+    <td width="213" colspan="2"><p>&nbsp;</td>
+  </tr>
+</table>
+            </div>
+        </div>
+        <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-bar-chart font-green-haze"></i>
+                <span class="caption-subject bold uppercase font-green-haze">KOSU: Temps réel MOD par pièce</span>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="fullscreen">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+    <div class="portlet-body">
+        <div id="chart_2" class="chart" style="height: 400px;">
+        </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

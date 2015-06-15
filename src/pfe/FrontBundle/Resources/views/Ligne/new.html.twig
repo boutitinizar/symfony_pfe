@@ -5,15 +5,50 @@
     <div class="portlet-body">
     <h1>Ligne creation</h1>
 
-    {{ form(form) }}
+        {{ form_start(form) }}
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.nomLigne, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Nom Ligne</label>
+            <span class="help-block">Enter Nom Ligne...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.zone, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Zone</label>
+            <span class="help-block">Enter zone...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.poste, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Poste</label>
+            <span class="help-block">Enter Post..</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.superviseur, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Superviseur</label>
+            <span class="help-block">Enter Superviseur</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.teamleader, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Teamleader</label>
+            <span class="help-block">Enter Teamleader...</span>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label">
+            {{ form_widget(form.objectifligne, { 'attr': {'class': 'form-control' } }) }}
+            <label for="form_control_1">Objectifligne</label>
+            <span class="help-block">Enter Objectifligne...</span>
+        </div>
+        {{ form_widget(form._token) }}
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-10">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ligne') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <input type="SUBMIT" class="btn" value="Submit" />
+                    <input type="reset" class="btn" value="Reset" />
+                </div>
+            </div>
+        </div>
+        </form>
+
+
         </div>
     </div>
 {% endblock %}

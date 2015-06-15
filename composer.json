@@ -23,8 +23,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "knplabs/knp-paginator-bundle": "~2.4",
-        "lexik/form-filter-bundle": "3.0.7",
-        "ob/highcharts-bundle": "~1.2"
+        "lexik/form-filter-bundle": "3.0.7"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

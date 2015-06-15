@@ -59,13 +59,13 @@
 <table class="table table-striped table-bordered table-hovers">
     <tr role="row" class="heading" >
         {# sorting of properties based on query components #}
-        <th width="12%" {% if pagination.isSorted('e.dateHeure') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Date Heure', 'e.dateHeure') }}</th>
-        <th width="12%" {% if pagination.isSorted('e.codeProduc') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Code Product', 'e.codeProduct') }}</th>
-        <th width="12%" {% if pagination.isSorted('e.serialNumber') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Serial Number', 'e.serialNumber') }}</th>
-        <th width="7%" {% if pagination.isSorted('e.movement') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Movement', 'e.movement') }}</th>
-        <th width="5%" {% if pagination.isSorted('e.status') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Status', 'e.status') }}</th>
-        <th width="12%" {% if pagination.isSorted('e.default') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Default', 'e.default') }}</th>
-        <th width="12%" {% if pagination.isSorted('e.description') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Description', 'e.description') }}</th>
+        <th width="20%" {% if pagination.isSorted('e.dateHeure') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Date Heure', 'e.dateHeure') }}</th>
+        <th width="10%" {% if pagination.isSorted('e.codeProduc') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Code Product', 'e.codeProduct') }}</th>
+        <th width="10%" {% if pagination.isSorted('e.serialNumber') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Serial Number', 'e.serialNumber') }}</th>
+        <th width="10%" {% if pagination.isSorted('e.movement') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Movement', 'e.movement') }}</th>
+        <th width="10%" {% if pagination.isSorted('e.status') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Status', 'e.status') }}</th>
+        <th width="5%" {% if pagination.isSorted('e.default') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Default', 'e.default') }}</th>
+        <th width="25%" {% if pagination.isSorted('e.description') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Description', 'e.description') }}</th>
         <th width="10%">
             Actions
         </th>
@@ -124,7 +124,8 @@
             <td>{{ article.movement }}</td>
             <td>{{ article.status }}</td>
             <td>{{ article.default }}</td>
-            <td colspan="2">{{ article.description }}</td>
+            <td>{{ article.description }}</td>
+            <td></td>
         </tr>
     {% endfor %}
 </table>

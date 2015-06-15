@@ -45,7 +45,7 @@ class Donnees
     /**
      * @var string
      * @ORM\ManyToOne(targetEntity="Ligne", inversedBy="donnees")
-     * @ORM\JoinColumn(name="id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="Ligne_id", referencedColumnName="id")
      */
     private $ligne;
 
